@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSX dan Babel</title>
+</head>
+<body>
+<div id="output"></div>
+<div id="output2"></div>
+<!-- Load Babel -->
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<!-- Your custom script here -->
+<script type="text/babel">
+const output=document.querySelector("#output");
+const output2=document.querySelector("#output2");
+const element=(
+    <ul>
+        <li>Samsung</li>
+        <li>Apple</li>
+        <li>Asus</li>
+    </ul>
+);
+const ngegas=(text) =>{
+    return text.toUpperCase()
+}
+let name="Rama Fajar Fadhillah";
+const h1=<h1>Helo, {ngegas(name)}.</h1>;
+const p=<p className="Paragraf-1">Ini Paragraf 1</p>;
+ReactDOM.render(h1, output);
+ReactDOM.render(p, output2);
+</script>
+</body>
+</html>
